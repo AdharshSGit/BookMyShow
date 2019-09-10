@@ -1,0 +1,78 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    background-image: url(cover.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+.heading
+{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 50px;
+    color: rebeccapurple;
+    margin-top: 1em;
+}
+.table
+{
+    width: 85%;
+    max-width: 600px;
+    height: 50%;
+    color: white;
+    top: 25%;
+    right: 30%;
+    position: absolute;
+    box-sizing:border-box;
+    text-align: center;
+    padding: 30px 40px;
+    border-radius: 10px; 
+    text-align: justify;
+}
+.content{
+    font-size: 28px;
+    padding-top: 10px;
+}
+#place{
+    margin-left: 120px;
+    padding: 8px;
+    font-size: 13px;
+}
+#theatre{
+    margin-left: 60px;
+    padding: 8px;
+    font-size: 13px;
+}
+#Movie{
+    margin-left: 77px;
+    padding: 8px;
+    font-size: 13px;
+}
+.date{
+    font-size: 28px;
+    
+}
+#day{
+    margin-left: 116px;
+    padding: 3px;
+}
+.att{
+    font-size: 12px;
+    
+}
+
+#Seat{
+    margin-left: 58px;
+    padding: 5px;
+}
+#button1{
+    margin-top: 40px;
+    margin-left: 130px;
+    font-size: 15px;
+    font-weight: bolder;
+    padding: 3px;
+}
