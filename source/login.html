@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+        <form name="signup"  style="border:1px solid #ccc">
+                <div class="container">
+                  <h1 id=signup>SIGN UP</h1>                
+                  <hr>
+                  <label for="Username" class="info"><b>Username</b></label>
+                  <input type="text" placeholder="Enter Username" id="user" name="username" required>
+              
+                  <label for="psw" class="info"><b>Password</b></label>
+                  <input type="password" placeholder="Enter Password" id="password" name="psw" required>
+              
+                  <label for="psw-repeat" class="info"><b>Repeat Password</b></label>
+                  <input type="password" placeholder="Repeat Password" id="repassword" name="psw-repeat" required>
+                  
+                  <div class="clearfix">
+                    <button type="button" class="loginbtn" onclick="document.getElementById('id01').style.display='block'"  >Login</button>
+                    <button type="submit" class="signupbtn" onclick="store()">Sign Up</button>
+                  </div>
+                </div>
+              </form>
+            <div id="id01" class="modal">
+            
+            <form class="modal-content animate"  >
+            
+                <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" id="loguser" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" id="logpsw" required>
+                    
+                
+                <a class="login" onclick="check()">Login</a>
+                </div>
+
+                <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                
+                </div>
+            </form>
+            </div>
+
+            <script src="../script/login.js">
+                            // Get the modal
+                var modal = document.getElementById('id01');
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            </script>
+</body>
+</html>
