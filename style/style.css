@@ -42,7 +42,7 @@ body
     padding: 8px;
     font-size: 13px;
 }
-#place{
+#shows{
     margin-left: 96px;
     padding: 8px;
     font-size: 13px;
@@ -68,10 +68,7 @@ body
     
 }
 
-#Seat{
-    margin-left: 58px;
-    padding: 5px;
-}
+
 #button1{
     margin-top: 40px;
     margin-left: 130px;
