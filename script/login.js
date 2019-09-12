@@ -1,24 +1,23 @@
-var username= new Array();
-var password = new Array();
-var repassword = new Array();
-var x=0;
+var username= null;
+var password = null;
+var repassword = null;
 
 function store()
 {
-    username[x]=document.getElementById("user").value;
-    password[x]=document.getElementById("password").value;
-    repassword[x]=document.getElementById("repassword").value;
-    JSON.parse(localStorage.setItem("user",username)) || [];
-    JSON.parse(localStorage.setItem("password",password)) || [];
-    JSON.parse(localStorage.setItem("repassword",repassword)) || [];
+    username=document.getElementById("user").value;
+    password=document.getElementById("password").value;
+    repassword=document.getElementById("repassword").value;
+    localStorage.setItem("user",username);
+    localStorage.setItem("password",password);
+    localStorage.setItem("repassword",repassword);
     alert("Succesfully Signed Up");
 }
 
    
 function check()
 {
-    var storeuser=localStorage.getItem("user", JSON.stringify(username));
-    var storepsw=localStorage.getItem("password",JSON.stringify(password));
+    var storeuser=localStorage.getItem("user", username);
+    var storepsw=localStorage.getItem("password",password);
     var loguser=document.getElementById("loguser").value;
     var logpsw=document.getElementById("logpsw").value;
     
