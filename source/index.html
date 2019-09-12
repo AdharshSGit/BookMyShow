@@ -10,7 +10,7 @@
     <form class="table">
         <div class="content">
             <label>CITY</label>
-            <select name="city" id="city">
+            <select name="city" id="city" required>
                 <option value=" ">-Select a City-</option>
                 <option value="City-1">Chennai</option>
                 <option value="City-2">Coimbatore</option>
@@ -20,32 +20,33 @@
         </div>
         <div class="content">
             <label>EVENT</label>
-            <select name="film" id="event">
+            <select name="film" id="event" required>
                 <option value=" ">-Select a Event-</option>
                 <option value="Event-1">MOVIE</option>
                 <option value="Event-2">SPORTS</option>
             </select>
         </div>
         <div class="content">
-            <label>PLACE</label>
-            <select name="screen" id="place">
-                <option value=" ">-Select a Place-</option>
-                <option value="place-1">PVR</option>
-                <option value="place-2">IMAX</option>
-                <option value="place-3">INOX</option>
-                <option value="place-4">Chepauk</option>
+            <label>SHOWS</label>
+            <select name="screen" id="shows" required>
+                <option value=" ">-Select a Show-</option>
+                <option value="show-1">SARKAR</option>
+                <option value="show-2">ENPT</option>
+                <option value="show-3">COMALI</option>
+                <option value="show-4">CRICKET</option>
             </select>
         </div>
         <div id="dd">
             <label class="date">DATE</label>
-            <input type="date" id="day"></input>
+            <input type="date" id="day" required></input>
         </div>
       
         <div>
-            <input type="button" value="SUBMIT" id="button1" ></input>
+            <input type="button" value="SUBMIT" id="button1" onclick="Submit();"></input>
         </div>
     </form>
-    
+    <div id="result"></div>
+    <script src="../script/script.js"></script>
 </body>
 
 <!--
