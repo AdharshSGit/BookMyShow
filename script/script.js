@@ -6,6 +6,10 @@ var film=new Array();
 var final=new Array();
 var disp= new Array();
 var mytable=new Array();
+var id=0;
+var noofseat=0;
+
+
 function Submit()
 {
     comp1 = document.getElementById("city").value;
@@ -51,17 +55,22 @@ function compare()
                 {
                     for(var j=0;j<booking[i].screen.length;j++)
                     {
+                        
                         film=booking[i].screen[j].s1 ;
+                        
                         //film=booking[i].screen[j].s1 + "<br>" + booking[i].screen[j+1].s2 + "<br>" + booking[i].screen[j+2].s3;
-                        final.push(JSON.stringify(film));
+                        final.push(film);
+                        window.localStorage["final"]=JSON.stringify(final)
                         console.log(final);
                         //console.log(booking[0].screen[0].s1);
-                        localStorage.setItem("final0",final[0]);
-                        localStorage.setItem("final1",final[1]);
-                        localStorage.setItem("final2",final[2]);
-                        localStorage.setItem("film",film);
+                        //JSON.parse(localStorage.setItem("final0",final[0]));
+                        //JSON.parse(localStorage.setItem("final1",final[1]));
+                        //JSON.parse(localStorage.setItem("final2",final[2]));
+                        //localStorage.setItem("film",film);
+
+                        
                     }
-                    console.log(final[0]);
+                    //console.log(final0);
                     alert("Success");
                     
                     self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/book.html";
@@ -73,21 +82,81 @@ function compare()
 }
 function display()
 {
+    var res="";
+    disp=JSON.parse(localStorage.getItem("final"));
     
-    disp1 = localStorage.getItem("final0");
-    disp2 = localStorage.getItem("final1");
-    disp3 = localStorage.getItem("final2");
+    for(var i=0;i<disp.length;i++){
+        res += "<input type='radio' id='r' value='disp' name='radio[]' onclick='radio()'>" 
+        + disp[i] + "</input>" + "<br>";
+        console.log(disp[i]);        
+    }
+    document.getElementById("result1").innerHTML =res;
     
-    console.log(disp1);
-    document.getElementById("result").innerHTML =  disp1 +"<br>" + disp2 + "<br>"+ disp3;
-    
-    <tr><td><select><option value="final0">1</option>
-    <option value="final1">2</option>
-    <option value="final2">2</option>
-    </select></td></tr>;  
 }
-function table()
+function radio()
 {
-    mytable="<tr><th>City</th><select><option>disp1</option></select><th>Events</th><th>Shows</th><th>Screen</th><th>Seat No</th><th>Amount</th></tr>\n";
+    var screen=0; 
+     screen = document.getElementsByName("radio[]");
+    if (screen[0].checked == true) {
+        alert("You have chosen the screen1");
+        document.getElementById('content2').style.display='block';
+        console.log(screen[0]);
+    }
+    else if (screen[1].checked == true) {
+        alert("You have chosen the screen2");
+        document.getElementById('content2').style.display='block';
+        //console.log(screen[1].value);
+     
+    }
+    else if (screen[2].checked == true) {
+        alert("You have chosen the screen3");
+        document.getElementById('content2').style.display='block';
+    }
+    else{
+        alert("Choose a Screen");
+    }
+    
     
 }
+
+function takeData(){
+    id = parseInt(document.getElementById("Username").value);
+    noofseat = parseInt(document.getElementById("Numseats").value);
+    if(isNaN(id))
+    {
+        alert("Enter the User Id");
+    }
+    else if(isNaN(noofseat))
+    {
+        alert("Enter No.of Seats to be booked");
+    }
+    else {
+        alert("Select the required seats");
+        document.getElementById('ss').style.display='block';
+    }
+
+}
+function updateTextArea()
+{
+    var seatselect=new Array();
+    seatselect = document.getElementsByClassName("seats");
+    var seatnum = "";
+    for(var i=0;i<120;i++)
+    {
+        if(seatselect[i].checked)
+        {
+            
+            seatnum += seatselect[i].value;
+            
+        }
+        
+    }
+    console.log(seatnum);
+    localStorage.setItem("seatnum",seatnum);
+    
+}
+//function table()
+//{
+  //  mytable="<tr><th>City</th><select><option>disp1</option></select><th>Events</th><th>Shows</th><th>Screen</th><th>Seat No</th><th>Amount</th></tr>\n";
+    
+//}
