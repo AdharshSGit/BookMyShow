@@ -1,14 +1,89 @@
+body{
+    background-image: url(../resource/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+#content1{
+    text-align: center;
+    width: 50%;    
+    margin-left: 25%;
+    
+    font-family: cursive;
+    margin-top: 10%; 
+    border: 2px solid grey;
+    color: white;
+    background-color: rgba(0,0, 0,0.6);
+    position: relative;
+    border-radius: 10px;
+}
+.avail{
+    font-size: 40px;
+
+}
+#btn1{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    padding: 5px,10px;
+    cursor: pointer;
+}
+#result1{
+    font-size: 20px;
+    padding-top: 5px;
+    font-weight: bold;
+}
 #content2{
     display: none;
     z-index: 1;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    position: fixed;
+    font-family: cursive;
+    margin-left: 20%;
+    margin-top: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid grey;
+    color: white;
+    background-color: rgba(0,0, 0,0.4);
+    position: relative;
+    border-radius: 10px;
+    width: 60%;
+    text-align: center;
+}
+.inputForm{
+    padding-top: 10px;
+}
+#btn2{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    padding: 5px,10px;
+    cursor: pointer;
 }
 #ss{
     display: none;
+      
 }
-#table{
+#seatsBlock{
+    text-align: center;
+    margin-left: 25%; 
+}
+#seatno{
+    color: black;
+}
+#table1{
     display: none;
+}
+#timer{
+    display: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20PX;
+    text-align: right;
+    font-weight: bolder;
+}
+#confirm{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    padding: 8px,12px;
+    cursor: pointer;
 }
