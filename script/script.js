@@ -1,6 +1,7 @@
 var comp1="";
 var comp2="";
 var comp3="";
+var comp4="";
 var booking;
 var film=new Array();
 var final=new Array();
@@ -8,14 +9,79 @@ var disp= new Array();
 var mytable=new Array();
 var id=0;
 var noofseat=0;
+var showscreen="";
+var table=new Array();
+var count=0;
+var prices=0;
+function update(){
 
+    var l1 = document.getElementById("city");
+    var strl1 = l1.options[l1.selectedIndex].value;
+
+    var l2 = document.getElementById("event");
+    var strl2 = l2.options[l2.selectedIndex].value;
+
+    
+
+    if((strl1=="Pollachi")||(strl1=="Trichy"))
+    {
+        console.log(strl1);
+        document.getElementById('e2').disabled =true;
+        document.getElementById('s4').disabled =true;
+    }
+    if(strl2=="Movie")
+    {
+        console.log(strl2);
+        document.getElementById('s4').disabled=true;
+    }
+    if(strl2=="Sports")
+    {
+        document.getElementById('s1').disabled=true;
+        document.getElementById('s2').disabled=true;
+        document.getElementById('s3').disabled=true;
+        
+    }
+   
+}
+function validate(){
+    var l1 = document.getElementById("city");
+    var strl1 = l1.options[l1.selectedIndex].value;
+
+    
+    var l2 = document.getElementById("event");
+    var strl2 = l2.options[l2.selectedIndex].value;
+
+    var l3 = document.getElementById("shows");
+    var strl3 = l3.options[l3.selectedIndex].value;
+    
+    
+  
+
+    if(strl1==0){
+        alert("Enter the City..");
+        
+    }
+    else if(strl2==0){
+        alert("Enter the Event..");
+        
+    }
+    else if(strl3==0){
+        alert("Enter the show..");
+        
+    }
+    else{
+      Submit();
+    }
+
+}
 
 function Submit()
 {
     comp1 = document.getElementById("city").value;
-    console.log(comp1);
     comp2 = document.getElementById("event").value;
     comp3 = document.getElementById("shows").value;
+    comp4 = document.getElementById("day").value;
+    console.log(comp4);
     
     booking=[{city:"Chennai",event:"Movie", shows:"SARKAR",screen:[{s1:"PVR-10AM"},{s1:"IMAX-1PM"},{s1:"INOX-4PM"}]},
     {city:"Chennai",event:"Movie", shows:"ENPT",screen:[{s1:"PVR-10AM"},{s1:"IMAX-1PM"},{s1:"INOX-4PM"}]},
@@ -39,8 +105,10 @@ function Submit()
     localStorage.setItem("city",comp1);
     localStorage.setItem("event",comp2);
     localStorage.setItem("shows",comp3);
+    localStorage.setItem("day",comp4);
     compare();
 }
+
 function compare()
 {
     
@@ -60,7 +128,7 @@ function compare()
                         
                         //film=booking[i].screen[j].s1 + "<br>" + booking[i].screen[j+1].s2 + "<br>" + booking[i].screen[j+2].s3;
                         final.push(film);
-                        window.localStorage["final"]=JSON.stringify(final)
+                        window.localStorage["final"]=JSON.stringify(final);
                         console.log(final);
                         //console.log(booking[0].screen[0].s1);
                         //JSON.parse(localStorage.setItem("final0",final[0]));
@@ -99,29 +167,59 @@ function radio()
      screen = document.getElementsByName("radio[]");
     if (screen[0].checked == true) {
         alert("You have chosen the screen1");
-        document.getElementById('content2').style.display='block';
-        console.log(screen[0]);
+        console.log(disp[0]);
+        showscreen = localStorage.setItem("disp",disp[0]);
+        call();
     }
     else if (screen[1].checked == true) {
         alert("You have chosen the screen2");
-        document.getElementById('content2').style.display='block';
-        //console.log(screen[1].value);
-     
+        console.log(disp[1]);
+        showscreen = localStorage.setItem("disp",disp[1]);
+        call();
     }
     else if (screen[2].checked == true) {
-        alert("You have chosen the screen3");
-        document.getElementById('content2').style.display='block';
+        alert("You have chosen the screen3");    
+        console.log(disp[2]);
+        showscreen = localStorage.setItem("disp",disp[2]);
+        call();
     }
     else{
         alert("Choose a Screen");
     }
-    
+function call(){
+    document.getElementById('timer').style.display='block';
+    var fiveMinutes = 60 * 5,
+        display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+}
     
 }
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
+    document.getElementById('content2').style.display='block';
+    document.getElementById('content1').style.display='none';
+}
+
+
 
 function takeData(){
     id = parseInt(document.getElementById("Username").value);
     noofseat = parseInt(document.getElementById("Numseats").value);
+    localStorage.setItem("id",id);
+    localStorage.setItem("noofseat",noofseat);
     if(isNaN(id))
     {
         alert("Enter the User Id");
@@ -131,14 +229,16 @@ function takeData(){
         alert("Enter No.of Seats to be booked");
     }
     else {
-        alert("Select the required seats");
+        
         document.getElementById('ss').style.display='block';
+        
     }
-
+    
 }
 function updateTextArea()
 {
     var seatselect=new Array();
+    count=0;
     seatselect = document.getElementsByClassName("seats");
     var seatnum = "";
     for(var i=0;i<120;i++)
@@ -146,17 +246,51 @@ function updateTextArea()
         if(seatselect[i].checked)
         {
             
-            seatnum += seatselect[i].value;
+            seatnum += seatselect[i].value +'<br>';
+            count++;
             
         }
         
     }
+    console.log(count);
     console.log(seatnum);
     localStorage.setItem("seatnum",seatnum);
+    if(count==noofseat)
+    {
+        price(count);   
+    }
+    else{
+        alert("Select valid no.of Seats");
+    }
     
 }
-//function table()
-//{
-  //  mytable="<tr><th>City</th><select><option>disp1</option></select><th>Events</th><th>Shows</th><th>Screen</th><th>Seat No</th><th>Amount</th></tr>\n";
+function price(count){
+    if(count!=0)
+    {
+        prices = count*200;
+        console.log(prices);   
+        localStorage.setItem("price",prices);
+        
+    }
+     document.getElementById('ss').style.display='none';
+     document.getElementById('detail').style.display='none';
+    document.getElementById('table1').style.display='block';
+    tabledisp();
+}
+
+function tabledisp()
+{
+    var k1=localStorage.getItem("id");
+    var k2=localStorage.getItem("city");
+    var k3=localStorage.getItem("shows");
+    var k4=localStorage.getItem("day");
+    var k5=localStorage.getItem("disp");
+    var k6=localStorage.getItem("seatnum");
+    var k7=localStorage.getItem("price");
+    table+="<table border='3'><tr><th 'text-align: center;'>User Id</th><th>City</th><th>Show</th><th>Date</th><th>Screen-Timings</th><th>Seat No</th><th>Total Price</th>";
+    table+="<tr><td>" + k1 + "</td>" + "<td>" + k2 + "</td>"+ "<td>" + k3 + "</td>"+ "<td>" + k4 + "</td>"+ "<td>" + k5 + "</td>"
+    +  "<td>" + k6 + "<td>" + '₹' + k7 + "</td></tr></table>";
     
-//}
+    document.getElementById("table1").innerHTML=table;  
+    
+}
