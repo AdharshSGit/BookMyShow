@@ -4,36 +4,37 @@
         Movie Booking..
     </title>
     <link rel="stylesheet" href="../style/style.css">
+    <script src="../script/script.js"></script>
 </header>
 <body>
     <h1 class="heading">Bookmyshow</h1>
     <form class="table">
         <div class="content">
             <label>CITY</label>
-            <select name="city" id="city" required>
+            <select name="city" id="city" onchange="update()">
                 <option value=" ">-Select a City-</option>
-                <option value="Chennai">Chennai</option>
-                <option value="Coimbatore">Coimbatore</option>
-                <option value= "Pollachi">Pollachi</option>
-                <option value="Trichy">Trichy</option>
+                <option value="Chennai" id="c1">Chennai</option>
+                <option value="Coimbatore" id="c2">Coimbatore</option>
+                <option value= "Pollachi" id="c3">Pollachi</option>
+                <option value="Trichy" id="c3">Trichy</option>
             </select>
         </div>
         <div class="content">
             <label>EVENT</label>
-            <select name="film" id="event" required>
+            <select name="film" id="event" onchange="update()" >
                 <option value=" ">-Select a Event-</option>
-                <option value="Movie">MOVIE</option>
-                <option value="Sports">SPORTS</option>
+                <option value="Movie" id="e1">MOVIE</option>
+                <option value="Sports" id="e2">SPORTS</option>
             </select>
         </div>
         <div class="content">
             <label>SHOWS</label>
-            <select name="screen" id="shows" required>
+            <select name="screen" id="shows"  >
                 <option value=" ">-Select a Show-</option>
-                <option value="SARKAR">SARKAR</option>
-                <option value="ENPT">ENPT</option>
-                <option value="COMALI">COMALI</option>
-                <option value="Cricket">CRICKET</option>
+                <option value="SARKAR" id="s1">SARKAR</option>
+                <option value="ENPT" id="s2">ENPT</option>
+                <option value="COMALI" id="s3">COMALI</option>
+                <option value="Cricket" id="s4">CRICKET</option>
             </select>
         </div>
         <div id="dd">
@@ -42,11 +43,12 @@
         </div>
       
         <div>
-            <input type="button" value="SUBMIT" id="button1" onclick="Submit()"></input>
+            <input type="button" value="SUBMIT" id="button1" onclick="validate()"></input>
         </div>
     </form>
     
-    <script src="../script/script.js"></script>
+    
+    <script src="../script/updation.js"></script>
 </body>
 
 <!--
