@@ -35,7 +35,7 @@ body{
 }
 #content2{
     display: none;
-    z-index: 1;
+    
     font-family: cursive;
     margin-left: 20%;
     margin-top: 5%;
@@ -87,3 +87,27 @@ body{
     padding: 8px,12px;
     cursor: pointer;
 }
+.logoutbtn2 {
+    float: right;
+    list-style: none;
+    margin-top: -5em;
+    margin-right: 4em;
+}
+.logoutbtn2 li{
+    display: inline-block;
+}  
+.logoutbtn2 li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    background: black;
+    padding: 5px;
+    
+}
+#delete{
+    display: none;
+}
+
+    
+
