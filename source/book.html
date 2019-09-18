@@ -4,10 +4,20 @@
         <title>
             Movie Booking..
         </title>
+        
+            
         <link rel="stylesheet" href="../style/book.css">
 
     </head>
     <body onload="display()" >
+        <div id="button1">
+            <ul class="logoutbtn2" >
+              <li><a href="../source/login.html">Log Out</a></li>
+              <li><a>Previous</a></li>
+              <li><a>Next</a></li>
+              </ul>
+            </div>
+        
       <div id="content1"> 
          <h1 class="avail">Available Screens</h1>
         <div id="result1"></div><br>
@@ -16,6 +26,7 @@
       </div>
       
         <div id="timer">Registration closes in <span id="time">05:00</span> minutes!</div>
+       
       
         <div  id="content2">
 
@@ -231,22 +242,18 @@
                     <td><input type="checkbox" class="seats" value="J11"></td>
                     <td><input type="checkbox" class="seats" value="J12"></td>
                 </tr>
-                  
-                  
+                    
                 </table>
                 <!--<label>Price:</label> <input type="number" id="pri" oninput="price();">-->
                 <div id="pri"></div>
                 <p>PRICE of each ticket: ₹200</p>
                 <button id="confirm" onclick="updateTextArea()">Confirm Selection</button>
                 </centre>
-                </div>
-                
-                
-                <div id="table1">
-                 
-                </div>
-                          
-      </div>
+                </div> 
+      
+      <div id="table1">
+          <button id=delete onclick="deletetable()" >Delete</button>
+          </div>
      
       <script src="../script/script.js"></script>
     </body>
