@@ -4,10 +4,13 @@ body {font-family: Arial, Helvetica, sans-serif;}
    width: 80%;
    margin-left: 10PX;
    margin-top: 25px;
+   font-family: cursive;
+   font-weight: bold;
 }
 #signup{
     margin-left: 230px;
     font-size: 40px;
+    font-weight: bolder;
 }
 
 /* Full-width input fields */
