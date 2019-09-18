@@ -1,7 +1,7 @@
-var comp1="";
-var comp2="";
-var comp3="";
-var comp4="";
+var comp1=[];
+var comp2=[];
+var comp3=[];
+var comp4=[];
 var booking;
 var film=new Array();
 var final=new Array();
@@ -14,7 +14,7 @@ var table=new Array();
 var count=0;
 var prices=0;
 function update(){
-
+    
     var l1 = document.getElementById("city");
     var strl1 = l1.options[l1.selectedIndex].value;
 
@@ -77,6 +77,12 @@ function validate(){
 
 function Submit()
 {
+    //city
+    //if(window.localStorage["city"]!=null)
+    //comp1=JSON.parse(window.localStorage["city"]);
+    //comp1.push(document.getElementById("city").value);
+    //window.localStorage["city"]=JSON.stringify(comp1);
+
     comp1 = document.getElementById("city").value;
     comp2 = document.getElementById("event").value;
     comp3 = document.getElementById("shows").value;
@@ -138,7 +144,7 @@ function compare()
 
                         
                     }
-                    //console.log(final0);
+                    
                     alert("Success");
                     
                     self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/book.html";
@@ -210,6 +216,7 @@ function startTimer(duration, display) {
         }
     }, 1000);
     document.getElementById('content2').style.display='block';
+    //document.getElementById('button1').style.display='block';
     document.getElementById('content1').style.display='none';
 }
 
@@ -272,14 +279,19 @@ function price(count){
         localStorage.setItem("price",prices);
         
     }
+    document.getElementById('Username').value="";
+    document.getElementById('Numseats').value="";
      document.getElementById('ss').style.display='none';
      document.getElementById('detail').style.display='none';
     document.getElementById('table1').style.display='block';
+    document.getElementById('delete').style.display='block';
+    //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/result.html";
     tabledisp();
 }
 
 function tabledisp()
 {
+    
     var k1=localStorage.getItem("id");
     var k2=localStorage.getItem("city");
     var k3=localStorage.getItem("shows");
@@ -293,4 +305,18 @@ function tabledisp()
     
     document.getElementById("table1").innerHTML=table;  
     
+}
+function deletetable()
+{
+    localStorage.removeItem("id");
+    localStorage.removeItem("city");
+    localStorage.removeItem("shows");
+    localStorage.removeItem("event");
+    localStorage.removeItem("day");
+    localStorage.removeItem("disp");
+    localStorage.removeItem("seatnum");
+    localStorage.removeItem("noofseat");
+    localStorage.removeItem("price");
+    self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
+
 }
