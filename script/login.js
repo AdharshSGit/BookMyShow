@@ -4,6 +4,7 @@ var passarray=[];
 var repassarray=[];
 var storeuser="";
 var storepsw="";
+var userid1=0;
 
 function store()
 {
@@ -29,6 +30,7 @@ function store()
    
 function check()
 {
+    
     storeuser=JSON.parse(localStorage.getItem("user"));
     console.log(storeuser);
     storepsw=JSON.parse(localStorage.getItem("pass"));
@@ -43,6 +45,9 @@ function check()
     if((storeuser[i]==loguser)&&(storepsw[i]==logpsw))
     {
         flag =1;
+        userid1 = i;
+        console.log(userid1);
+        localStorage.setItem("user_id",userid1);
        
     }
     else{
@@ -53,6 +58,7 @@ function check()
     }
     if(flag=1){
         alert("You have logged in Successfully")
+
         document.getElementById("loguser").value="";
         document.getElementById("logpsw").value="";
         self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
