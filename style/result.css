@@ -1,0 +1,47 @@
+body{
+    background-image: url(../resource/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: cursive;
+    
+}
+#table1{
+    border-collapse: collapse;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 7em;
+    margin-left: 10em;
+    padding: 20px;
+    border: 2px solid grey;
+    background-color: rgba(0,0, 0,0.6);
+    width: 50%;
+}
+#delete{
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    padding: 5px,10px;
+    cursor: pointer;
+    text-align: center;
+    float: both;
+    margin-left: 20em;
+}
+.logoutbtn2 {
+    float: right;
+    list-style: none;
+    margin-top: -5em;
+    margin-right: 4em;
+}
+.logoutbtn2 li{
+    display: inline-block;
+}  
+.logoutbtn2 li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    background: black;
+    padding: 5px;
+    
+}
