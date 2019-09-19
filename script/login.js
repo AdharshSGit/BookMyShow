@@ -61,7 +61,8 @@ function check()
 
         document.getElementById("loguser").value="";
         document.getElementById("logpsw").value="";
-        self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
+        //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
+        window.location.assign("../source/index.html");
     }
     else{
         alert("Error");
