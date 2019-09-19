@@ -155,7 +155,8 @@ function compare()
                     
                     alert("Success");
                     
-                    self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/book.html";
+                    //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/book.html";
+                    window.location.assign("../source/book.html");
                 }   
             }
         }       
@@ -289,7 +290,7 @@ function updateTextArea()
     }
     console.log(count);
     console.log(seatnum);
-    console.log(numseat[0]);
+    var userid1=localStorage.getItem("user_id");
     //seatnumber
     if(window.localStorage["seatnum"]!=null)
     seatnumber=JSON.parse(window.localStorage["seatnum"]);
@@ -297,7 +298,7 @@ function updateTextArea()
     window.localStorage["seatnum"]=JSON.stringify(seatnumber);
 
     
-    if(count==numseat[0])
+    if(count==numseat[userid1])
     {
         price(count);   
     }
@@ -330,15 +331,16 @@ function price(count){
 
 function tabledisp()
 {
-       
+    var userid1=localStorage.getItem("user_id");
+    console.log(userid1);  
     var k1=[]; var k2=[]; var k3=[]; var k4=[]; var k5=[]; var k6=[]; var k7=[];
-    k1[userid1]=JSON.parse(localStorage.getItem("userid"));console.log(k1[0]);
-    k2[userid1]=JSON.parse(localStorage.getItem("cities"));
-    k3[userid1]=JSON.parse(localStorage.getItem("showss"));
-    k4[userid1]=JSON.parse(localStorage.getItem("date"));
-    k5[userid1]=JSON.parse(localStorage.getItem("showtime"));
-    k6[userid1]=JSON.parse(localStorage.getItem("seatnum"));
-    k7[userid1]=JSON.parse(localStorage.getItem("totalprice"));
+    k1=JSON.parse(localStorage.getItem("userid"));
+    k2=JSON.parse(localStorage.getItem("cities"));
+    k3=JSON.parse(localStorage.getItem("showss"));
+    k4=JSON.parse(localStorage.getItem("date"));
+    k5=JSON.parse(localStorage.getItem("showtime"));
+    k6=JSON.parse(localStorage.getItem("seatnum"));
+    k7=JSON.parse(localStorage.getItem("totalprice"));
     table+="<table border='3'><tr><th 'text-align: center;'>User Id</th><th>City</th><th>Show</th><th>Date</th><th>Screen-Timings</th><th>Seat No</th><th>Total Price</th>";
     table+="<tr><td>" + k1[userid1] + "</td>" + "<td>" + k2[userid1] + "</td>"+ "<td>" + k3[userid1] + "</td>"+ "<td>" + k4[userid1] + "</td>"+ "<td>" + k5[userid1] + "</td>"
     +  "<td>" + k6[userid1] + "<td>" +'Rs: ' + k7[userid1] + "</td></tr></table>";
@@ -348,21 +350,16 @@ function tabledisp()
 }
 function deletetable()
 {
-    localStorage.removeItem("id");
-    localStorage.removeItem("city");
-    localStorage.removeItem("shows");
+    localStorage.removeItem("showss");
     localStorage.removeItem("event");
-    localStorage.removeItem("day");
-    localStorage.removeItem("disp");
+    localStorage.removeItem("date");
+    localStorage.removeItem("showtime");
     localStorage.removeItem("seatnum");
     localStorage.removeItem("noofseat");
-    localStorage.removeItem("price");
-    self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
+    localStorage.removeItem("totalprice");
+    localStorage.removeItem("cities");
+    localStorage.removeItem("events");
+    //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
+    window.location.assign("../source/index.html");
 
-}
-function goback1(){
-    document.getElementById('detail').style.display='none';
-    document.getElementById('content1').style.display='block';
-    document.getElementById('timer').style.display='none';
-    
 }
