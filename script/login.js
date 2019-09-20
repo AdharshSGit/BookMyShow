@@ -5,7 +5,7 @@ var repassarray=[];
 var storeuser="";
 var storepsw="";
 var userid1=0;
-
+var dummy=0;
 function store()
 {
     if(window.localStorage["user"]!=null)
@@ -22,9 +22,39 @@ function store()
         repassarray=JSON.parse(window.localStorage["repass"]);
         repassarray.push(document.getElementById("repassword").value);
         window.localStorage["repass"]=JSON.stringify(repassarray);
-
-
-    alert("Succesfully Signed Up");
+    var len=userarray.length-1;
+    console.log(len);
+    console.log(userarray[len]);
+    
+    for(var j=0;j<len;j++)
+    {
+        alert("..");
+        dummy=0;
+        if(userarray[j]==userarray[len])
+        {
+            alert("if");
+            console.log(userarray[j]);
+            console.log(userarray[len]);
+            dummy=1;
+            break;
+        }
+    else{
+        alert("else");
+        dummy=0;
+        
+    }}
+    if(dummy==0){
+        
+        alert("Succesfully Signed Up");
+        
+    }
+    else if(dummy==1){
+        
+        alert("Username Already Exist..!");
+        
+        
+    }
+    
 }
 
    
