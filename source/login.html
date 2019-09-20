@@ -6,11 +6,11 @@
 </head>
 <body>
     
-        <form name="signup"  style="border:1px solid #ccc" autocomplete="off">
+        <form name="signup"   autocomplete="off" id=page1 >
           
                 <div class="container">
                   <h1 id=signup>SIGN UP</h1>                
-                  <hr>
+                  
                   <label for="Username" class="info"><b>Username</b></label>
                   <input type="text" placeholder="Enter Username" id="user" name="username" required>
               
@@ -22,14 +22,14 @@
                   
                   <div class="clearfix">
                     <button type="button" class="loginbtn" onclick="document.getElementById('id01').style.display='block'"  >Login</button>
-                    <button type="submit" class="signupbtn" onclick="store()">Sign Up</button>
+                    <button type="submit" id="sign" class="signupbtn" onclick="store()">Sign Up</button>
                     
                   </div>
                 </div>
               </form>
-            <div id="id01" class="modal">
+            <div id="id01" class="modal" >
             
-            <form class="modal-content animate"  >
+            <form class="modal-content animate" autocomplete="off" id=page2 >
             
                 <div class="container">
                 <label for="uname"><b>Username</b></label>
