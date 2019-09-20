@@ -3,21 +3,33 @@ background-image: url(../resource/login1.jpg);
 background-size: cover;
 background-repeat: no-repeat;
 
+
 }
 
 * {
-   width: 80%;
-   margin-left: 10PX;
-   margin-top: 25px;
-   font-family: cursive;
-   font-weight: bold;
+    font-family: cursive;
+   font-weight: bolder;
 }
 #signup{
     margin-left: 230px;
     font-size: 40px;
     font-weight: bolder;
+    margin-left: 6em;
+    
 }
-
+#page1{
+  width: 50%;
+  margin-top: 5em;
+  margin-left: 20em;
+  
+  
+}
+#page2{
+  width: 50%;
+  margin-top: 5em;
+  margin-left: 20em;
+  
+}
 /* Full-width input fields */
 input[type=text], input[type=password] {
   width: 100%;
@@ -35,15 +47,12 @@ input[type=text]:focus, input[type=password]:focus {
 .info{
     font-size: 18px;
 }
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
 
 /* Set a style for all buttons */
 button {
  
   color: white;
+  font-weight: bold;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -147,7 +156,7 @@ span.psw {
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
+  border: 2px solid black;
   width: 80%; /* Could be more or less, depending on screen size */
 }
 
@@ -177,9 +186,10 @@ span.psw {
     border: solid 2px purple;
     background: purple;
     color: white;
-    margin-left: 300px;
-    padding: 5px 100px ;
+    margin-left: 250px;
+    padding: 5px 30px ;
     margin-top: 10px;
+    cursor: pointer;
 
 }
 @-webkit-keyframes animatezoom {
