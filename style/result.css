@@ -13,12 +13,11 @@ body{
     margin-top: 7em;
     margin-left: 10em;
     padding: 20px;
-    border: 2px solid grey;
     background-color: rgba(0,0, 0,0.6);
     width: 50%;
 }
 #delete{
-    font-size: 15px;
+    font-size: 18px;
     color: black;
     font-weight: bold;
     padding: 5px,10px;
@@ -44,4 +43,25 @@ body{
     background: black;
     padding: 5px;
     
+}
+#download{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    padding: 5px,10px;
+    cursor: pointer;
+    text-align: center;
+    float: both;
+    margin-left: 5em;
+    
+}
+#edit{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    padding: 5px,10px;
+    cursor: pointer;
+    text-align: center;
+    float: both;
+    margin-left: 5em;
 }
