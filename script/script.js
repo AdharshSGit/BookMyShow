@@ -17,6 +17,8 @@ var totalprice=[];
 var showtime=[];
 var seatnumber=[];
 var numseat=0;
+var k1=[]; var k2=[]; var k3=[]; var k4=[]; var k5=[]; var k6=[]; var k7=[];
+var x;
 function update(){
     
     var l1 = document.getElementById("city");
@@ -152,7 +154,10 @@ function compare()
                         console.log(final);
                        
                     }
-                    
+                    console.log(comp3[userid1]);
+                    var x=comp3[userid1];
+                    localStorage.setItem("x",x);
+                    alert(x);
                     alert("Success");
                     
                     //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/book.html";
@@ -235,6 +240,8 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
+        setTimeout(() => {location.href="../source/index.html" 
+    }, 300000);
     }, 1000);
     document.getElementById('content2').style.display='block';
     document.getElementById('content1').style.display='none';
@@ -290,6 +297,7 @@ function updateTextArea()
     }
     console.log(count);
     console.log(seatnum);
+    
     var userid1=localStorage.getItem("user_id");
     //seatnumber
     if(window.localStorage["seatnum"]!=null)
@@ -326,14 +334,14 @@ function price(count){
     //document.getElementById('table1').style.display='block';
     
     window.location.assign("../source/result.html");
-   
+    
 }
 
 function tabledisp()
 {
     var userid1=localStorage.getItem("user_id");
     console.log(userid1);  
-    var k1=[]; var k2=[]; var k3=[]; var k4=[]; var k5=[]; var k6=[]; var k7=[];
+    
     k1=JSON.parse(localStorage.getItem("userid"));
     k2=JSON.parse(localStorage.getItem("cities"));
     k3=JSON.parse(localStorage.getItem("showss"));
@@ -350,7 +358,7 @@ function tabledisp()
 }
 function deletetable()
 {
-    localStorage.removeItem("showss");
+    
     localStorage.removeItem("event");
     localStorage.removeItem("date");
     localStorage.removeItem("showtime");
@@ -362,4 +370,26 @@ function deletetable()
     //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
     window.location.assign("../source/index.html");
 
+}
+function download(){
+    window.print();
+    window.location.assign("../source/index.html");
+}
+function edit(){
+    window.location.assign("../source/index.html");
+}
+function preview(){
+    var userid1=localStorage.getItem("user_id");
+    var z=localStorage.getItem("x");
+    console.log(userid1);
+    console.log(z);
+    if(z=='Cricket')
+    {
+    var a = document.createElement("IMG");
+    a.setAttribute("src", "../resource/cover5.jpg");
+    a.setAttribute("width", "150");
+    a.setAttribute("height", "100");
+    a.setAttribute("alt", "Cricket");
+    document.body.appendChild(a);
+  }
 }
