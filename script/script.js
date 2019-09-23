@@ -19,6 +19,7 @@ var seatnumber=[];
 var numseat=0;
 var k1=[]; var k2=[]; var k3=[]; var k4=[]; var k5=[]; var k6=[]; var k7=[];
 var x;
+var user_id;
 function update(){
     
     var l1 = document.getElementById("city");
@@ -157,7 +158,7 @@ function compare()
                     console.log(comp3[userid1]);
                     var x=comp3[userid1];
                     localStorage.setItem("x",x);
-                    alert(x);
+                    
                     alert("Success");
                     
                     //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/book.html";
@@ -220,9 +221,9 @@ function get(){
 }
 function call(){
     document.getElementById('timer').style.display='block';
-    var fiveMinutes = 60 * 5,
+    var twoMinutes = 60 * 2,
         display = document.querySelector('#time');
-        startTimer(fiveMinutes, display);
+        startTimer(twoMinutes, display);
 }
     
 }
@@ -240,8 +241,8 @@ function startTimer(duration, display) {
         if (--timer < 0) {
             timer = duration;
         }
-        setTimeout(() => {location.href="../source/index.html" 
-    }, 300000);
+        setTimeout(() => {location.href="../source/index.html" ;deletetimer() 
+    }, 120000);
     }, 1000);
     document.getElementById('content2').style.display='block';
     document.getElementById('content1').style.display='none';
@@ -253,7 +254,7 @@ function takeData(){
     //id
     if(window.localStorage["userid"]!=null)
     id=JSON.parse(window.localStorage["userid"]);
-    id.push(parseInt(document.getElementById("Username").value));
+    id.push(document.getElementById("Username").value);
     window.localStorage["userid"]=JSON.stringify(id);
 
     //no.ofseat
@@ -265,7 +266,7 @@ function takeData(){
 
     if(id="")
     {
-        alert("Enter the User Id");
+        alert("Enter the UserName");
     }
     else if(noofseat="")
     {
@@ -329,9 +330,7 @@ function price(count){
     }
     document.getElementById('Username').value="";
     document.getElementById('Numseats').value="";
-     //document.getElementById('ss').style.display='none';
-     //document.getElementById('detail').style.display='none';
-    //document.getElementById('table1').style.display='block';
+    
     
     window.location.assign("../source/result.html");
     
@@ -342,7 +341,7 @@ function tabledisp()
     var userid1=localStorage.getItem("user_id");
     console.log(userid1);  
     
-    k1=JSON.parse(localStorage.getItem("userid"));
+    k1=JSON.parse(localStorage.getItem("user"));
     k2=JSON.parse(localStorage.getItem("cities"));
     k3=JSON.parse(localStorage.getItem("showss"));
     k4=JSON.parse(localStorage.getItem("date"));
@@ -358,25 +357,179 @@ function tabledisp()
 }
 function deletetable()
 {
+    var flag1=[]; var flag2=[]; var flag3=[]; var flag4=[]; var flag5=[]; var flag6=[]; 
+    var flag7=[]; var flag8=[]; var flag9=[];
+   
+    var userid1=localStorage.getItem("user_id");
+
+    if(typeof(Storage)!=="undefined")
+    {
+        
+        //city
+        var flag1= JSON.parse(localStorage.getItem("cities")) || [];
+        
+        flag1.splice(flag1.indexOf(userid1),1);
+        localStorage.setItem("cities",JSON.stringify(flag1));
+
+        //event
+        var flag2= JSON.parse(localStorage.getItem("events")) || [];
+        
+        flag2.splice(flag2.indexOf(userid1),1);
+        localStorage.setItem("events",JSON.stringify(flag2));
+
+        //shows
+        var flag3= JSON.parse(localStorage.getItem("showss")) || [];
+        
+        flag3.splice(flag3.indexOf(userid1),1);
+        localStorage.setItem("showss",JSON.stringify(flag3));
+
+        //date
+        var flag4= JSON.parse(localStorage.getItem("date")) || [];
+        
+        flag4.splice(flag4.indexOf(userid1),1);
+        localStorage.setItem("date",JSON.stringify(flag4));
+
+        //screen-timings
+        var flag5= JSON.parse(localStorage.getItem("showtime")) || [];
+        
+        flag5.splice(flag5.indexOf(userid1),1);
+        localStorage.setItem("showtime",JSON.stringify(flag5));
+
+        //no.of seat
+        var flag6= JSON.parse(localStorage.getItem("noofseat")) || [];
+        
+        flag6.splice(flag6.indexOf(userid1),1);
+        localStorage.setItem("noofseat",JSON.stringify(flag6));
+
+        //seatno
+
+        var flag7= JSON.parse(localStorage.getItem("seatnum")) || [];
+        
+        flag7.splice(flag7.indexOf(userid1),1);
+        localStorage.setItem("seatnum",JSON.stringify(flag7));
+
+        //total price
+
+        var flag8= JSON.parse(localStorage.getItem("totalprice")) || [];
+        
+        flag8.splice(flag8.indexOf(userid1),1);
+        localStorage.setItem("totalprice",JSON.stringify(flag8));
+
+         //userid
+
+         var flag9= JSON.parse(localStorage.getItem("userid")) || [];
+        
+         flag9.splice(flag9.indexOf(userid1),1);
+         localStorage.setItem("userid",JSON.stringify(flag9));
     
-    localStorage.removeItem("event");
-    localStorage.removeItem("date");
-    localStorage.removeItem("showtime");
-    localStorage.removeItem("seatnum");
-    localStorage.removeItem("noofseat");
-    localStorage.removeItem("totalprice");
-    localStorage.removeItem("cities");
-    localStorage.removeItem("events");
-    //self.location="file:///C:/Users/adharsh.s/Documents/GitHub/Task-3/source/index.html";
     window.location.assign("../source/index.html");
 
 }
+}
 function download(){
+
     window.print();
     window.location.assign("../source/index.html");
 }
 function edit(){
-    window.location.assign("../source/index.html");
+    var flag6=[]; var flag5=[]; var flag7=[]; var flag8=[]; var flag9=[];
+    var userid1=localStorage.getItem("user_id");
+
+    if(typeof(Storage)!=="undefined")
+    {
+        //screen-timings
+        var flag5= JSON.parse(localStorage.getItem("showtime")) || [];
+        
+        flag5.splice(flag5.indexOf(userid1),1);
+        localStorage.setItem("showtime",JSON.stringify(flag5));
+
+        //no.of seat
+        var flag6= JSON.parse(localStorage.getItem("noofseat")) || [];
+        
+        flag6.splice(flag6.indexOf(userid1),1);
+        localStorage.setItem("noofseat",JSON.stringify(flag6));
+
+        //seatno
+
+        var flag7= JSON.parse(localStorage.getItem("seatnum")) || [];
+        
+        flag7.splice(flag7.indexOf(userid1),1);
+        localStorage.setItem("seatnum",JSON.stringify(flag7));
+
+        //total price
+
+        var flag8= JSON.parse(localStorage.getItem("totalprice")) || [];
+        
+        flag8.splice(flag8.indexOf(userid1),1);
+        localStorage.setItem("totalprice",JSON.stringify(flag8));
+
+        //userid
+
+        var flag9= JSON.parse(localStorage.getItem("userid")) || [];
+        
+        flag9.splice(flag9.indexOf(userid1),1);
+        localStorage.setItem("userid",JSON.stringify(flag9));
+
+        window.location.assign("../source/book.html");
+        
+    }
+
+}
+
+function deletetimer() 
+{
+
+    var flag1=[]; var flag2=[]; var flag3=[]; var flag4=[]; var flag5=[]; var flag6=[]; var flag9=[];
+    
+    var userid1=localStorage.getItem("user_id");
+
+    if(typeof(Storage)!=="undefined")
+    {
+        
+        //city
+        var flag1= JSON.parse(localStorage.getItem("cities")) || [];
+        
+        flag1.splice(flag1.indexOf(userid1),1);
+        localStorage.setItem("cities",JSON.stringify(flag1));
+
+        //event
+        var flag2= JSON.parse(localStorage.getItem("events")) || [];
+        
+        flag2.splice(flag2.indexOf(userid1),1);
+        localStorage.setItem("events",JSON.stringify(flag2));
+
+        //shows
+        var flag3= JSON.parse(localStorage.getItem("showss")) || [];
+        
+        flag3.splice(flag3.indexOf(userid1),1);
+        localStorage.setItem("showss",JSON.stringify(flag3));
+
+        //date
+        var flag4= JSON.parse(localStorage.getItem("date")) || [];
+        
+        flag4.splice(flag4.indexOf(userid1),1);
+        localStorage.setItem("date",JSON.stringify(flag4));
+
+        //screen-timings
+        var flag5= JSON.parse(localStorage.getItem("showtime")) || [];
+        
+        flag5.splice(flag5.indexOf(userid1),1);
+        localStorage.setItem("showtime",JSON.stringify(flag5));
+
+        //no.of seat
+        var flag6= JSON.parse(localStorage.getItem("noofseat")) || [];
+        
+        flag6.splice(flag6.indexOf(userid1),1);
+        localStorage.setItem("noofseat",JSON.stringify(flag6));
+
+        //userid
+
+        var flag9= JSON.parse(localStorage.getItem("userid")) || [];
+        
+        flag9.splice(flag9.indexOf(userid1),1);
+        localStorage.setItem("userid",JSON.stringify(flag9));
+
+    }
 }
 function preview(){
     var userid1=localStorage.getItem("user_id");
@@ -386,10 +539,85 @@ function preview(){
     if(z=='Cricket')
     {
     var a = document.createElement("IMG");
-    a.setAttribute("src", "../resource/cover5.jpg");
-    a.setAttribute("width", "150");
-    a.setAttribute("height", "100");
+    a.setAttribute("src", "../resource/IPL.jpg");
+    a.setAttribute("width", "350");
+    a.setAttribute("height", "200");
     a.setAttribute("alt", "Cricket");
     document.body.appendChild(a);
+    print(z);
+    }
+    else if(z=='SARKAR')
+    {
+        var a = document.createElement("IMG");
+        a.setAttribute( "src", "../resource/sarkar.jpg");
+        a.setAttribute("width", "350");
+        a.setAttribute("height", "200");
+        a.setAttribute("alt", "Sarkar");
+        document.body.appendChild(a);
+        print(z);
+        
+    }
+    else if(z=='ENPT')
+    {
+        var a = document.createElement("IMG");
+        a.setAttribute("src", "../resource/enpt1.jpg");
+        a.setAttribute("width", "350");
+        a.setAttribute("height", "200");
+        a.setAttribute("alt", "ENPT");
+        document.body.appendChild(a);
+        print(z);
+    }
+    else if(z=='COMALI')
+    {
+        var a = document.createElement("IMG");
+        a.setAttribute("src", "../resource/comali.jpg");
+        a.setAttribute("width", "350");
+        a.setAttribute("height", "200");
+        a.setAttribute("alt", "Comali");
+        document.body.appendChild(a);
+        
+        print(z);
+    }
   }
-}
+
+  function print(y)
+  {
+ 
+      if(y=="COMALI")
+      {
+        
+        document.getElementById('print').style.display='block';
+        document.getElementById('heading').style.display='block';
+          var detail="Actor : Jayam Ravi"+ "<br>" + "Actress : KajalAgarwal" +"<br>" + "Comedian : Yogi Babu" +"<br>"
+          + "Director : Pradeep Ranganathan" + "<br>" + "Music Director : Hiphop Aadhi" ;
+          document.getElementById('print').innerHTML=  detail;
+          
+      }
+     else if(y=="SARKAR")
+      {
+        document.getElementById('print').style.display='block';
+        document.getElementById('heading').style.display='block';
+          var detail="Actor : Vijay"+ "<br>" + "Actress : Keerthy Suresh" +"<br>" + "Comedian : Yogi Babu" +"<br>"
+          + "Director : A.R. Murugudoss" + "<br>" + "Music Director : A.R. Rahman" ;
+          document.getElementById('print').innerHTML=  detail;  
+      }
+
+      else if(y=="ENPT")
+      {
+        document.getElementById('print').style.display='block';
+        document.getElementById('heading').style.display='block';
+          var detail="Actor : Dhanush"+ "<br>" + "Actress : Megha Aakash" +"<br>" + "Comedian : Sathish" +"<br>"
+          + "Director : Gautham Vasudhev Menon" + "<br>" + "Music Director : Darbuka Siva" ;
+          document.getElementById('print').innerHTML=  detail;  
+      }
+      else if(y=="Cricket")
+      {
+        document.getElementById('print').style.display='block';
+        document.getElementById('heading').style.display='block';
+          var detail="CSK vs MI" +"<br>" + "Captain : M.S. Dhoni (CSK)" +"<br>" + "Captain : Rohith Sharma (MI)"
+          + "<br>" + "Head to Head : CSK-8 MI-5";
+          document.getElementById('print').innerHTML=  detail;  
+      }
+
+  }
+
