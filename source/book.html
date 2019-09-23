@@ -10,6 +10,9 @@
 
     </head>
     <body onload="display()" >
+        <div class=logo>
+            <a><img src="../resource/logo.png"></a>
+        </div>
         <div id="button1">
             <ul class="logoutbtn2" >
               <li><a href="../source/login.html">Log Out</a></li>
@@ -24,14 +27,14 @@
         <input type="button" value="BOOK" id="btn1" onclick="radio()"></input> 
       </div>
       
-        <div id="timer">Registration closes in <span id="time">05:00</span> minutes!</div>
+        <div id="timer">Registration closes in <span id="time">02:00</span> minutes!</div>
        
       
         <div  id="content2">
 
                 <div class="inputForm" id="detail">
                 <centre>
-                  UserId : <input type="number" id="Username" required autocomplete="off">
+                  UserName : <input type="text" id="Username" required autocomplete="off">
                   Number of Seats : <input type="number" id="Numseats" required>
                   <br/><br/>
                   <button id="btn2" onclick="takeData()">Start Selecting</button>
@@ -46,11 +49,7 @@
                 <table id="seatsBlock">
                   <tr>
                     <td colspan="14"><div class="screen">SCREEN</div></td>
-                    <td rowspan="20">
-                      <div class="smallBox greenBox">Selected Seat</div> <br/>
-                      <div class="smallBox redBox">Reserved Seat</div><br/>
-                      <div class="smallBox emptyBox">Empty Seat</div><br/>
-                    </td>
+                  
                     
                     <br/>
                   </tr>
