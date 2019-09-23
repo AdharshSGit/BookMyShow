@@ -28,18 +28,18 @@ function store()
     
     for(var j=0;j<len;j++)
     {
-        alert("..");
+        
         dummy=0;
         if(userarray[j]==userarray[len])
         {
-            alert("if");
+            
             console.log(userarray[j]);
             console.log(userarray[len]);
             dummy=1;
             break;
         }
     else{
-        alert("else");
+        
         dummy=0;
         
     }}
