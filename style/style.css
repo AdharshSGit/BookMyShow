@@ -11,6 +11,7 @@ body
     background-repeat: no-repeat;
     font-family: cursive;
 }
+
 .heading
 {
     text-align: center;
@@ -47,6 +48,9 @@ body
     font-size: 13px;
     
 }
+#city:hover,#shows:hover,#event:hover,#day:hover{
+    transform: scale(1.15);
+}
 #shows{
     margin-left: 77px;
     padding: 8px;
@@ -79,8 +83,13 @@ body
     margin-left: 130px;
     font-size: 18px;
     font-weight: bolder;
-    padding: 3px;
+    padding: 8px;
     cursor: pointer;
+    background: black;
+    color: white;
+}
+#button1:hover{
+    color: brown;
 }
 .logoutbtn1{
     text-decoration: none;
@@ -103,5 +112,56 @@ body
     font-size: 20px;
     font-weight: bold;
     background: black;
-    padding: 5px;
+    padding: 8px;
+}
+.logoutbtn1 li a:hover{
+    color: brown;
+        
+}
+#container{
+    margin-top: 20em;
+    margin-left: 4em;
+    
+}
+.head1{
+    margin-left: 13em;
+    padding: 1em;
+    color: white;
+ 
+}
+.head1:hover{
+    color:bisque;
+}
+.gall{
+    
+    flex-wrap: wrap;
+    margin: -1rem -1rem;
+}
+.gallery{
+    margin: 1rem;
+	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+    
+}
+#sarkar,#ENPT,#comali,#ipl,#tnpl{
+    
+	width: 400px;
+	height: 200px;
+	object-fit: cover;
+    transition: transform 400ms ease-out;
+    margin-bottom: 2em;
+}
+#tnpl:hover {
+	transform: scale(1.15);
+}
+#sarkar:hover{
+    transform: scale(1.15);
+}
+#ENPT:hover{
+    transform: scale(1.15);
+}
+#comali:hover{
+    transform: scale(1.15);
+}
+#ipl:hover{
+    transform: scale(1.15);
 }
