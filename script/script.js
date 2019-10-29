@@ -41,8 +41,9 @@ function update(){
         console.log(strl2);
         document.getElementById('s4').disabled=true;
     }
-    if(strl2=="Sports")
+    else if(strl2=="Sports")
     {
+        console.log(strl2);
         document.getElementById('s1').disabled=true;
         document.getElementById('s2').disabled=true;
         document.getElementById('s3').disabled=true;
