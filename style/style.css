@@ -20,7 +20,7 @@ body
     color: white;
     margin-top: 1em;
     margin-right: 50px;
-
+    
 }
 .table
 {
@@ -91,17 +91,12 @@ body
 #button1:hover{
     color: brown;
 }
-.logoutbtn1{
-    text-decoration: none;
-    text-align: right;
-    margin-right: 60px;
-    margin-top: 40px;   
-}
-.logoutbtn2 {
-    float: right;
+
+.logoutbtn1 {
+    
     list-style: none;
-    margin-top: -5em;
-    margin-right: 4em;
+    margin-top: 2em;
+    margin-left: 68em;
 }
 .logoutbtn1 li{
     display: inline-block;
