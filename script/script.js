@@ -427,11 +427,7 @@ function deletetable()
 
 }
 }
-function download(){
 
-    window.print();
-    window.location.assign("../source/index.html");
-}
 function edit(){
     var flag6=[]; var flag5=[]; var flag7=[]; var flag8=[]; var flag9=[];
     var userid1=localStorage.getItem("user_id");
@@ -545,7 +541,7 @@ function preview(){
     a.setAttribute("height", "200");
     a.setAttribute("alt", "Cricket");
     document.body.appendChild(a);
-    print(z);
+    print1(z);
     }
     else if(z=='SARKAR')
     {
@@ -555,7 +551,7 @@ function preview(){
         a.setAttribute("height", "200");
         a.setAttribute("alt", "Sarkar");
         document.body.appendChild(a);
-        print(z);
+        print1(z);
         
     }
     else if(z=='ENPT')
@@ -566,7 +562,7 @@ function preview(){
         a.setAttribute("height", "200");
         a.setAttribute("alt", "ENPT");
         document.body.appendChild(a);
-        print(z);
+        print1(z);
     }
     else if(z=='COMALI')
     {
@@ -577,11 +573,14 @@ function preview(){
         a.setAttribute("alt", "Comali");
         document.body.appendChild(a);
         
-        print(z);
+        print1(z);
     }
   }
-
-  function print(y)
+  function download()
+  {
+    window.print();
+  }
+  function print1(y)
   {
  
       if(y=="COMALI")
