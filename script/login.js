@@ -49,14 +49,11 @@ function store()
         
     }
     else if(dummy==1){
-        
-        alert("Username Already Exist..!");
-        
-        
-    }
-    
-}
+        //userarray.pop();
+        alert("Username Already Exist..!");  
 
+    }
+}
    
 function check()
 {
