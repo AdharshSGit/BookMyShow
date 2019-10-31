@@ -34,12 +34,22 @@ function update(){
     {
         console.log(strl1);
         document.getElementById('e2').disabled =true;
-        document.getElementById('s4').disabled =true;
+        document.getElementById('s4').disabled =true;   
     }
+    else if((strl1=="Chennai")||(strl1=="Coimbatore"))
+    {
+        document.getElementById('e2').disabled =false;
+        document.getElementById('s4').disabled =false;
+    }
+
     if(strl2=="Movie")
     {
         console.log(strl2);
         document.getElementById('s4').disabled=true;
+        document.getElementById('s1').disabled=false;
+        document.getElementById('s2').disabled=false;
+        document.getElementById('s3').disabled=false;
+
     }
     else if(strl2=="Sports")
     {
@@ -47,6 +57,7 @@ function update(){
         document.getElementById('s1').disabled=true;
         document.getElementById('s2').disabled=true;
         document.getElementById('s3').disabled=true;
+        document.getElementById('s4').disabled=false;
         
     }
    
@@ -62,9 +73,6 @@ function validate(){
     var l3 = document.getElementById("shows");
     var strl3 = l3.options[l3.selectedIndex].value;
     
-    
-  
-
     if(strl1==0){
         alert("Enter the City..");
         
@@ -128,8 +136,7 @@ function Submit()
     
     localStorage.setItem("booking", JSON.stringify(booking));
     booking = JSON.parse(localStorage.getItem("booking"));
-    console.log(typeof booking);
-    console.log(booking); //[1, 2, 3]
+    console.log(booking);
     
     compare();
 }
