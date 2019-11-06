@@ -72,6 +72,8 @@ function validate(){
 
     var l3 = document.getElementById("shows");
     var strl3 = l3.options[l3.selectedIndex].value;
+
+    var l4 = document.getElementById("day");
     
     if(strl1==0){
         alert("Enter the City..");
