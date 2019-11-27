@@ -17,7 +17,7 @@ var totalprice=[];
 var showtime=[];
 var seatnumber=[];
 var numseat=0;
-var k1=[]; var k2=[]; var k3=[]; var k4=[]; var k5=[]; var k6=[]; var k7=[];
+var temp1=[]; var temp2=[]; var temp3=[]; var temp4=[]; var temp5=[]; var temp6=[]; var temp7=[];
 var x;
 var user_id;
 function update(){
@@ -351,16 +351,16 @@ function tabledisp()
     var userid1=localStorage.getItem("user_id");
     console.log(userid1);  
     
-    k1=JSON.parse(localStorage.getItem("user"));
-    k2=JSON.parse(localStorage.getItem("cities"));
-    k3=JSON.parse(localStorage.getItem("showss"));
-    k4=JSON.parse(localStorage.getItem("date"));
-    k5=JSON.parse(localStorage.getItem("showtime"));
-    k6=JSON.parse(localStorage.getItem("seatnum"));
-    k7=JSON.parse(localStorage.getItem("totalprice"));
+    temp1=JSON.parse(localStorage.getItem("user"));
+    temp2=JSON.parse(localStorage.getItem("cities"));
+    temp3=JSON.parse(localStorage.getItem("showss"));
+    temp4=JSON.parse(localStorage.getItem("date"));
+    temp5=JSON.parse(localStorage.getItem("showtime"));
+    temp6=JSON.parse(localStorage.getItem("seatnum"));
+    temp7=JSON.parse(localStorage.getItem("totalprice"));
     table+="<table border='3'><tr><th 'text-align: center;'>User Id</th><th>City</th><th>Show</th><th>Date</th><th>Screen-Timings</th><th>Seat No</th><th>Total Price</th>";
-    table+="<tr><td>" + k1[userid1] + "</td>" + "<td>" + k2[userid1] + "</td>"+ "<td>" + k3[userid1] + "</td>"+ "<td>" + k4[userid1] + "</td>"+ "<td>" + k5[userid1] + "</td>"
-    +  "<td>" + k6[userid1] + "<td>" +'Rs: ' + k7[userid1] + "</td></tr></table>";
+    table+="<tr><td>" + temp1[userid1] + "</td>" + "<td>" + temp2[userid1] + "</td>"+ "<td>" + temp3[userid1] + "</td>"+ "<td>" + temp4[userid1] + "</td>"+ "<td>" + temp5[userid1] + "</td>"
+    +  "<td>" + temp6[userid1] + "<td>" +'Rs: ' + temp7[userid1] + "</td></tr></table>";
     
     document.getElementById("table1").innerHTML=table;  
     
