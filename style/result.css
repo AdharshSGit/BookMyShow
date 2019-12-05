@@ -89,7 +89,6 @@ body{
 #print{
     display: none;
     width: 50%;
-    
     margin-left: 15em;
     font-size: 20px;
     font-weight: bold;
@@ -118,4 +117,28 @@ img{
 .logo{
     float: both;
     margin-left: 10px;
+}
+@media screen and (max-width: 1010px)
+{
+    .logo{
+        margin-left: 50px;
+    }
+    #download,#edit,#download,#preview
+    {
+        margin-left: 1.4em;
+    }
+    #heading
+    {
+        margin-left: 15em;
+        font-size: 25px;
+        width: 20%;
+    }
+    #print
+    {
+        margin-left: 11em;
+    }
+    img{
+        margin-left: 20em;
+        padding-bottom: 2em;
+    }
 }
