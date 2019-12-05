@@ -14,7 +14,7 @@ background-repeat: no-repeat;
     margin-left: 230px;
     font-size: 40px;
     font-weight: bolder;
-    margin-left: 6em;
+    
     
 }
 #page1{
@@ -190,7 +190,7 @@ span.psw {
     padding: 5px 30px ;
     margin-top: 10px;
     cursor: pointer;
-
+    line-height: 50px;
 }
 @-webkit-keyframes animatezoom {
   from {-webkit-transform: scale(0)} 
@@ -211,4 +211,26 @@ span.psw {
   .cancelbtn {
      width: 100%;
   }
+}
+@media screen and (max-width: 1010px)
+{
+  #signup
+  {
+    margin-left: 150px;
+    font-size: 40px;
+    font-weight: bolder;
+    
+  }
+  .login{
+    font-size: 20px;
+    border: solid 2px purple;
+    background: purple;
+    color: white;
+    margin-left: 180px;
+    line-height: 50px;
+    padding: 5px 30px ;
+    margin-top: 10px;
+    cursor: pointer;
+
+}
 }
