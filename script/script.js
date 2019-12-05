@@ -261,31 +261,21 @@ function startTimer(duration, display) {
 
 
 function takeData(){
-    //id
-    if(window.localStorage["userid"]!=null)
-    id=JSON.parse(window.localStorage["userid"]);
-    id.push(document.getElementById("Username").value);
-    window.localStorage["userid"]=JSON.stringify(id);
-
+    
     //no.ofseat
     if(window.localStorage["noofseat"]!=null)
     noofseat=JSON.parse(window.localStorage["noofseat"]);
     noofseat.push(parseInt(document.getElementById("Numseats").value));
     window.localStorage["noofseat"]=JSON.stringify(noofseat);
     numseat=JSON.parse(localStorage.getItem("noofseat"));
-
-    if(id="")
-    {
-        alert("Enter the UserName");
-    }
-    else if(noofseat="")
+    
+    if(noofseat="")
     {
         alert("Enter No.of Seats to be booked");
     }
+  
     else {
-        
-        document.getElementById('ss').style.display='block';
-        
+        document.getElementById('ss').style.display='block'; 
     }
     
 }
@@ -338,9 +328,7 @@ function price(count){
         window.localStorage["totalprice"]=JSON.stringify(totalprice);
 
     }
-    document.getElementById('Username').value="";
     document.getElementById('Numseats').value="";
-    
     
     window.location.assign("../source/result.html");
     
