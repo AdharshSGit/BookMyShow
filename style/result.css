@@ -118,7 +118,7 @@ img{
     float: both;
     margin-left: 10px;
 }
-@media screen and (max-width: 1010px)
+@media screen and (max-width: 1045px)
 {
     .logo{
         margin-left: 50px;
