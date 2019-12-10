@@ -195,9 +195,9 @@ function radio()
 {
     var screen=0; 
      screen = document.getElementsByName("radio[]");
-    if (screen[0].checked == true) {
+    if (screen[0].checked == true) 
+    {
         alert("You have chosen the screen1");
-        
         localStorage.setItem("disp",disp[0]);
         showscreen=localStorage.getItem("disp");
         get();
