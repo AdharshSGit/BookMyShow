@@ -129,7 +129,7 @@ img{
     }
     #heading
     {
-        margin-left: 15em;
+        margin-left: 16em;
         font-size: 25px;
         width: 20%;
     }
@@ -140,5 +140,9 @@ img{
     img{
         margin-left: 20em;
         padding-bottom: 2em;
+    }
+    #table1
+    {
+        width: 60%;
     }
 }
