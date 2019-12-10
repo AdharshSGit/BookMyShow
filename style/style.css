@@ -160,7 +160,7 @@ body
 #ipl:hover{
     transform: scale(1.15);
 }
-@media screen and (max-width: 1011px)   
+@media screen and (max-width: 1045px)   
 {
     .logoutbtn1 {
     
