@@ -29,6 +29,7 @@ body{
     padding: 5px,10px;
     cursor: pointer;
     padding: 8px;
+    display: none;
 }
 #btn1:hover{
     color: brown;
