@@ -21,7 +21,9 @@ body{
     font-size: 40px;
 
 }
-#btn1{
+#confirm-screen
+{
+    margin-left: 20em;
     font-size: 15px;
     color:white;
     background: black;
@@ -31,6 +33,7 @@ body{
     padding: 8px;
     display: none;
 }
+
 #btn1:hover{
     color: brown;
 }
@@ -134,6 +137,12 @@ body{
 .logoutbtn2 li a:hover{
     color: brown;
 }
-
+@media screen and (max-width: 1045px)
+{
+    #confirm-screen
+    {
+    margin-left: 15em;
+    }
+}
 
 
