@@ -1,9 +1,11 @@
-body {font-family: cursive;
+body 
+{font-family: cursive;
 background-image: url(../resource/login1.jpg);
-background-size: cover;
+width: 100%;
+height:680px; 
 background-repeat: no-repeat;
-
-
+overflow: hidden;
+background-size:cover;
 }
 
 * {
@@ -69,11 +71,12 @@ button:hover {
 .loginbtn {
   padding: 14px 20px;
   background-color:grey;
-  margin-left: 20%;
+  
 }
 .signupbtn{
     background-color: purple;
     padding: 14px 20px;
+    margin-left: 20%;
 }
 
 /* Float cancel and signup buttons and add an equal width */
@@ -232,5 +235,12 @@ span.psw {
     margin-top: 10px;
     cursor: pointer;
 
+}
+body 
+{
+font-family: cursive;
+background-image: url(../resource/login1.jpg);
+background-size: cover;
+background-repeat: no-repeat;
 }
 }
