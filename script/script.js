@@ -197,30 +197,30 @@ function radio()
      screen = document.getElementsByName("radio[]");
     if (screen[0].checked == true) 
     {
-        alert("You have chosen the screen1");
+        document.getElementById('confirm-screen').style.display='block';
         localStorage.setItem("disp",disp[0]);
         showscreen=localStorage.getItem("disp");
-        get();
+        
     }
     else if (screen[1].checked == true) {
-        alert("You have chosen the screen2");
+        document.getElementById('confirm-screen').style.display='block';
         console.log(disp[1]);
         localStorage.setItem("disp",disp[1]);
         showscreen = localStorage.getItem("disp");
-        get();
+        
     }
     else if (screen[2].checked == true) {
-        alert("You have chosen the screen3");    
+        document.getElementById('confirm-screen').style.display='block';   
         console.log(disp[2]);
         localStorage.setItem("disp",disp[2]);
         showscreen = (localStorage.getItem("disp"));
         console.log(showscreen);
-        get();
+        
     }
     else{
         alert("Choose a Screen");
     }
-
+}
 function get(){
     if(window.localStorage["showtime"]!=null)
     
@@ -236,7 +236,7 @@ function call(){
         startTimer(twoMinutes, display);
 }
     
-}
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
