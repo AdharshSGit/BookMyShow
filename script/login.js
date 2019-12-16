@@ -6,6 +6,7 @@ var storeuser="";
 var storepsw="";
 var userid1=0;
 var dummy=0;
+var flag;
 function store()
 {
     if(window.localStorage["user"]!=null)
@@ -64,9 +65,10 @@ function check()
     console.log(storepsw);
     var loguser=document.getElementById("loguser").value;
     var logpsw=document.getElementById("logpsw").value;
-    var flag=0;
+    
     if((loguser!="")&&(logpsw!=""))
     { 
+        
         for(var i=0;i<storeuser.length;i++)
         {
     if((storeuser[i]==loguser)&&(storepsw[i]==logpsw))
@@ -83,7 +85,7 @@ function check()
     }
     }
     }
-    if(flag=1){
+    if(flag==1){
         alert("You have logged in Successfully")
 
         document.getElementById("loguser").value="";
@@ -93,5 +95,7 @@ function check()
     }
     else{
         alert("Error");
+        document.getElementById("loguser").value="";
+        document.getElementById("logpsw").value="";
     }
 }
