@@ -89,6 +89,7 @@ function validate(){
     }
     else{
       Submit();
+
     }
 
 }
